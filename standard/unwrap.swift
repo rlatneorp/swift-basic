@@ -6,7 +6,7 @@ if someVariable == nil {
     someVariable = 90
 }
 
-print("someVariable: \(someVariable)")
+// print("someVariable: \(someVariable)")
 
 // 언랩핑이란? 랩 즉 감싸져있는 것을 벗기는 것
 
@@ -19,4 +19,23 @@ if let otherVariable = someVariable {
 someVariable = nil
 
 // someVariable이 비어있으면 값이 없으면 기본값으로 이것을 넣겠다
-let myV
+let myValue = someVariable ?? 10
+print("myValue: \(myValue)")
+
+var firstValue : Int? = 30
+var secondValue : Int? = 50
+
+print("firstValue: \(firstValue)")
+print("secondValue: \(secondValue)")
+
+unwrap(firstValue)
+unwrap(secondValue)
+
+func unwrap(_ parameter: Int?){
+    print("unwrap() called")
+    // 값이 없으면 리턴 한다
+    guard let unwrappedParam = parameter else {
+            return
+    }
+    print("unwrappedParam: \(unwrappedParam)")
+}
